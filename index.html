@@ -51,13 +51,45 @@
       height:50px;
     }
 
-    /* ----- HERO ----- */
-    .hero{position:relative; border-radius:calc(var(--radius) + 6px); overflow:hidden; box-shadow:var(--shadow)}
-    .hero img{width:100%; height:58vh; min-height:380px; object-fit:cover; display:block}
-    .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(200deg,rgba(0,0,0,.1) 20%, rgba(0,0,0,.35) 75%)}
-    .hero-content{position:absolute; inset:0; display:flex; align-items:flex-end; padding:32px;}
-    .hero-inner{max-width:820px; color:#fff}
-    .tagline{font-size:clamp(14px,2vw,18px); opacity:.9}
+/* ----- HERO ----- */
+.hero {
+  position:relative;
+  border-radius:calc(var(--radius) + 6px);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero img {
+  width:100%;
+  height:58vh;
+  min-height:380px;
+  object-fit:cover;
+  display:block;
+}
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 100%);
+}
+.hero-content {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:32px;
+}
+.hero-inner {
+  max-width:820px;
+  color:#fff; /* force all text inside to white */
+}
+.hero-inner .eyebrow {
+  background:rgba(255,255,255,.2); /* lighter backdrop for readability */
+  color:#fff;                      /* force eyebrow text white */
+}
+.hero-inner h2,
+.hero-inner .tagline {
+  color:#fff;                      /* ensure heading & tagline are white */
+}
 
     /* ----- DETAILS ----- */
     .details{grid-template-columns:repeat(4, minmax(0,1fr))}
@@ -118,16 +150,16 @@
   <!-- ===================== HERO / TOP BANNER ===================== -->
   <header class="container section">
     <span class="eyebrow">Featured Project</span>
-    <h1 class="title-xl">Courtyard Residence – Al Barsha, Dubai</h1>
+    <h1 class="title-xl">Courtyard Residence – Nairobi, Kenya</h1>
     <p class="muted">A modern courtyard home blending nature with contemporary design.</p>
   </header>
 
   <section class="container hero">
-    <img src="https://images.unsplash.com/photo-1505692794403-34f41c4e5f9c?q=80&w=2000&auto=format&fit=crop" alt="Project banner" />
+    <img src="https://caparolkenya.com/wp-content/uploads/Untitled-1_0004_WhatsApp-Image-2023-08-19-at-15.01.jpg" />
     <div class="hero-content">
       <div class="hero-inner">
         <span class="eyebrow">Residential / Exterior & Interior Finishes</span>
-        <h2 class="title-lg" style="margin-top:8px">Project: Al Barsha Courtyard Home</h2>
+        <h2 class="title-lg" style="margin-top:8px">Al Barsha Courtyard Home</h2>
         <p class="tagline">Warm neutral palette, textured finishes, and low-VOC paints across 7,500 sq. ft.</p>
       </div>
     </div>
@@ -143,7 +175,7 @@
     <div class="grid details">
       <div class="card detail">
         <h4>Location</h4>
-        <p>Al Barsha, Dubai – UAE</p>
+        <p>Rosslyn, Nairobi - Kenya</p>
       </div>
       <div class="card detail">
         <h4>Project Type</h4>
@@ -175,23 +207,17 @@
     </article>
 
     <aside class="panel card">
-      <h3 style="margin-bottom:12px">Before / After</h3>
-      <div class="ba" id="ba">
-        <img class="before" src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1400&auto=format&fit=crop" alt="Before" />
-        <img class="after"  src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1400&auto=format&fit=crop" alt="After" />
-        <div class="divider" id="divider"></div>
-        <div class="handle" id="handle">Drag</div>
-        <input id="slider" type="range" min="0" max="100" value="50" aria-label="Before After Slider" />
+ 
       </div>
-      <p class="muted" style="margin-top:10px">Tip: drag the handle to compare the transformation.</p>
+      <p class="muted" style="margin-top:30px">Add Before & After Images Here.</p>
     </aside>
   </section>
 
   <!-- ===================== GALLERY ===================== -->
   <section id="gallery" class="container section">
     <div class="section-head">
-      <h2 class="title-lg">Gallery</h2>
-      <span class="muted">High-quality images • Optional video below</span>
+      <h2 class="title-lg">Project Gallery</h2>
+      <span class="muted"> </span>
     </div>
 
     <div class="grid gallery">
@@ -207,17 +233,13 @@
   <!-- ===================== OPTIONAL VIDEO ===================== -->
   <section class="container section">
     <div class="section-head">
-      <h2 class="title-lg">Walkthrough Video (Optional)</h2>
-      <span class="muted">Embed a YouTube/Vimeo link</span>
+      <h2 class="title-lg">Walkthrough Video (Before & After)</h2>
+      <span class="muted"> </span>
     </div>
     <div class="video card">
-      <iframe src="https://www.youtube-nocookie.com/embed/vV7qvUO3xqU" title="Project Walkthrough" allowfullscreen></iframe>
+      <iframe src="Video" allowfullscreen></iframe>
     </div>
   </section>
-
-  <footer class="footer container">
-    © Your Brand • Swap images/text directly in this single file. Replace URLs in <code>src="..."</code> and text above.
-  </footer>
 
   <script>
     // Before/After slider logic
